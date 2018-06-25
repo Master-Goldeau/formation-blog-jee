@@ -5,29 +5,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import fr.gtm.blog.domain.Article;
 
+@Service
 public class ArticleService {
-
-	// Début implémentation Design Pattern Singleton -> Classe n'ayant qu'une
-	// seule et unique instance.
-
-	private static ArticleService INSTANCE;
-
-	public static ArticleService getSingleton() {
-		return ArticleService.INSTANCE;
-	}
-
-	public static void prepareSingleton(int idCount)
-			throws UnsupportedOperationException {
-		if (ArticleService.INSTANCE == null) {
-			ArticleService.INSTANCE = new ArticleService(idCount);
-		} else {
-			throw new UnsupportedOperationException();
-		}
-	}
-
-	// Fin implémentation Singleton.
 
 	private static final List<Article> MOCK_ARTICLES = Collections
 			.unmodifiableList(Arrays.asList(
