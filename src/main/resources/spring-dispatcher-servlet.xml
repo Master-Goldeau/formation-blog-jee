@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
         
-    <context:component-scan base-package="fr.gtm.blog.web,fr.gtm.blog.business" />
+    <context:component-scan base-package="fr.gtm.blog.web" />
     
 	<!-- Déclaration d'un bean (scope=singleton) permettant d'injecter une instance
 	unique du service qui manipule les objets d'articles partout où demandé (@Autowired). -->
