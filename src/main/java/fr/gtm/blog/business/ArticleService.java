@@ -5,8 +5,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.gtm.blog.dao.ArticleRepository;
 import fr.gtm.blog.domain.Article;
 
 @Service
@@ -18,6 +20,8 @@ public class ArticleService {
 							new Article(1, "Article n°2", "DESCR"),
 							new Article(2, "Article n°3", "DESCR") }));
 
+	@Autowired
+	private ArticleRepository repo;
 	private int idCount;
 	private final List<Article> articles;
 
@@ -30,14 +34,16 @@ public class ArticleService {
 
 	public Article create(final String title, final String description) {
 		final Article result = new Article();
-		result.setId(this.idCount++);
+		// result.setId(this.idCount++);
 		result.setTitle(title);
 		result.setDescription(description);
-		this.articles.add(result);
+		// this.articles.add(result);
+		this.repo.save(result);
 		return result;
 	}
 
 	public List<Article> getArticles() {
+		articles.addAll(this.repo.findAll());
 		return articles;
 	}
 

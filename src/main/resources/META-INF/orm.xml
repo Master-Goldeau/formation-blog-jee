@@ -9,4 +9,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
 
+	<entity class="fr.gtm.blog.domain.Article">
+		<table name="article" />
+		<attributes>
+			<id name="id">
+				<column name="article_id" />
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="title" />
+			<basic name="description" />
+		</attributes>
+	</entity>
 </entity-mappings>
