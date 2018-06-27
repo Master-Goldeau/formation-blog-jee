@@ -17,4 +17,15 @@
 			<value>3</value>
 		</constructor-arg>
 	</bean>
+	
+	<bean id="entityManagerFactory"
+			class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+	<property name="persistenceUnitName" value="blog"/>
+	</bean>
+	
+	<bean id="transactionManager"
+	class="org.springframework.orm.jpa.JpaTransactionManager">
+	<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	
 </beans>
