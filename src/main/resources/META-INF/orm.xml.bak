@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 <!-- Fichier de configuration ORM (Object-Relational Mapping) qui décrit 
 	le lien entre les objets Java et les tables relationnelles de la base de 
 	données. Il faut déclarer un élément entity pour chaque objet Java utilisé 
 	et configurer le lien des attributs Java avec les différentes colonnes de 
 	la base de données. -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 <entity-mappings version="2.0"
 	xmlns="http://java.sun.com/xml/ns/persistence/orm"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
 
-	<entity class="fr.gtmblog.Article">
+<<<<<<< HEAD
 
+	<entity class="fr.gtmblog.Article">
+=======
+	<entity class="fr.gtm.blog.domain.Article">
+>>>>>>> upstream/master
 		<table name="article" />
 		<attributes>
 			<id name="id">
@@ -23,4 +33,8 @@
 			<basic name="description" />
 		</attributes>
 	</entity>
+<<<<<<< HEAD
 </entity-mappings>
+=======
+</entity-mappings>
+>>>>>>> upstream/master

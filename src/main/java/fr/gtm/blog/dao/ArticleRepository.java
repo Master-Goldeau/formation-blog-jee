@@ -6,9 +6,7 @@ import org.springframework.stereotype.Repository;
 import fr.gtm.blog.domain.Article;
 
 @Repository
+
 public interface ArticleRepository extends JpaRepository<Article, Integer>{
-	
-	
-	
 
 }
