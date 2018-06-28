@@ -15,20 +15,17 @@
     
 	<!-- Déclaration d'un bean (scope=singleton) permettant d'injecter une instance
 	unique du service qui manipule les objets d'articles partout où demandé (@Autowired). -->
-	<bean id="articleService" class="fr.gtm.blog.business.ArticleService">
-		<constructor-arg>
-			<value>3</value>
-		</constructor-arg>
-	</bean>
+	<bean id="articleService" class="fr.gtm.blog.business.ArticleService" />
 	
 	<bean id="entityManagerFactory"
-		class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="blog"/>
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="blog" />
 	</bean>
 	
 	<bean id="transactionManager"
 		class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
+		<property name="entityManagerFactory" ref="entityManagerFactory" />	
 	</bean>
 	
+	<jpa:repositories base-package="fr.gtm.blog.dao" />
 </beans>

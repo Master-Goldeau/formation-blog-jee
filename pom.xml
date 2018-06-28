@@ -77,14 +77,11 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<!-- Dépendances aux modules de persistence de Spring. -->
-		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-<!-- 		N.B Cette dépendance est incluse dans spring-data-jpa -->
-		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
