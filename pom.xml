@@ -76,6 +76,11 @@
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<!-- Dépendances aux modules de persistence de Spring. -->
 		<dependency>
 			<groupId>org.springframework</groupId>

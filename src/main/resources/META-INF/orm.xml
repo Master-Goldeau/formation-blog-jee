@@ -10,7 +10,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
 
 	<entity class="fr.gtm.blog.domain.Article">
-		<table name="article" />
+		<table name="article" />	
 		<attributes>
 			<id name="id">
 				<column name="article_id" />
@@ -18,6 +18,38 @@
 			</id>
 			<basic name="title" />
 			<basic name="description" />
+			<many-to-one name="author">
+				<join-column name="author_id" referenced-column-name="id" />
+			</many-to-one>
+		</attributes>
+	</entity>
+	
+	<entity class="fr.gtm.blog.domain.Author">
+		<attributes>
+			<id name="id">
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="name" />
+			<basic name="subDate" />
+			<!-- MappedBy utilisé pour définir une relation bidirectionnelle -->
+			<one-to-many name="articles" mapped-by="author">
+				<!-- <join-column name="author_id" />
+					Définition unidirectionnelle de la relation -->
+			</one-to-many>
+			<one-to-one name="address">
+				<join-column name="address_id" referenced-column-name="id" />
+			</one-to-one>
+		</attributes>
+	</entity>
+	
+	<entity class="fr.gtm.blog.domain.Address">
+		<attributes>
+			<id name="id">
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="city" />
+			<basic name="postalCode" />
+			<basic name="line" />
 		</attributes>
 	</entity>
 </entity-mappings>
