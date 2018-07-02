@@ -2,6 +2,10 @@ package fr.gtm.blog.domain;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 /**
  * Classe d'entité POJO représentant une donnée d'article de blog.
  */
@@ -15,6 +19,9 @@ public class Article implements Entity, Serializable {
 
 	private String description;
 
+	@JsonProperty(access=Access.WRITE_ONLY)
+	//Permet par exemple de ne pas renvoyer un mot de passe reçu par le front.
+	
 	private Author author;
 
 	/**
